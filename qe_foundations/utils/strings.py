@@ -14,3 +14,12 @@ def is_valid_email(email):
     """True when email has exactly one '@' and a '.' in the domain part."""
     return email.count("@") == 1 and "." in email.split("@")[1]
 
+def mask_email(email):
+    if (is_valid_email(email)):
+        email_parts = email.split('@')
+        email_parts[0] = email_parts[0][0] + "***"
+        masked_email = "@".join(email_parts)
+        return masked_email
+    else:
+        return email
+

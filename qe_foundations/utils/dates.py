@@ -15,3 +15,6 @@ def timestamp_for_filename(moment=None):
     moment = moment or datetime.now()
     return moment.strftime("%Y%m%d_%H%M%S")
 
+def days_between(start, end):
+    return (end-start).days
+
